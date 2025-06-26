@@ -1,0 +1,39 @@
+class Coffee:
+    def make(self):
+        pass
+
+class Espresso(Coffee):
+    def make(self):
+        print("Espresso is ready!")
+
+class Cappuccino(Coffee):
+    def make(self):
+        print("Cappuccino is ready!")
+
+class Latte(Coffee):
+    def make(self):
+        print("Latte is ready!")
+
+class CoffeeFactory:
+    def create_coffee(self, type):
+        if type == "espresso":
+            return Espresso()
+        elif type == "cappuccino":
+            return Cappuccino()
+        elif type == "latte":
+            return Latte()
+        else:
+            return None
+
+factory = CoffeeFactory()
+
+coffee1 = factory.create_coffee("espresso")
+coffee2 = factory.create_coffee("cappuccino")
+coffee3 = factory.create_coffee("latte")
+
+if coffee1:
+    coffee1.make()
+if coffee2:
+    coffee2.make()
+if coffee3:
+    coffee3.make()
