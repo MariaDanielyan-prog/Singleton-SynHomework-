@@ -1,0 +1,28 @@
+class Coffee:
+    def makeCoffee(self):
+        print("Your Coffee is ready!")
+
+class CoffeeAdapter:
+    def __init__(self, coffee):
+        self.coffee = coffee
+
+    def makeCoffee(self):
+        self.coffee.makeCoffee()
+
+class SugarAdapter(CoffeeAdapter):
+    def makeCoffee(self):
+        self.coffee.makeCoffee()
+        print("Coffee with sugar sugar.")
+
+class MilkAdapter(CoffeeAdapter):
+    def makeCoffee(self):
+        self.coffee.makeCoffee()
+        print("Coffee with milk milk.")
+
+coffee = Coffee()
+coffee1 = SugarAdapter(coffee)
+coffee2 = MilkAdapter(coffee)
+
+coffee.makeCoffee()
+coffee1.makeCoffee()
+coffee2.makeCoffee()
