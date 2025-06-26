@@ -1,0 +1,24 @@
+class Coffee:
+    def makeCoffee(self):
+        print("This is coffee")
+
+def sugar(coffee):
+    def wrapper():
+        coffee.makeCoffee()
+        print("With sugar")
+    return wrapper
+
+def milk(coffee):
+    def wrapper():
+        coffee.makeCoffee()
+        print("With milk")
+    return wrapper
+
+coffee = Coffee()
+
+coffee1 = sugar(coffee)
+coffee2 = milk(coffee)
+
+coffee.makeCoffee()
+sugar()
+milk()
