@@ -1,0 +1,21 @@
+class Coffee:
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.name = "Кофе"
+        return cls._instance
+
+    def makeCoffee(self):
+        print("Your Coffee is ready!")
+
+
+espresso = Coffee()
+cappuccino = Coffee()
+
+espresso.makeCoffee()
+cappuccino.makeCoffee()
+
+if espresso is cappuccino:
+    print(True)
