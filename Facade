@@ -1,0 +1,31 @@
+class Coffee:
+    def makeCoffee(self):
+        print("This is coffee")
+
+class Sugar:
+    def addSugar(self):
+        print("with sugar")
+
+class Milk:
+    def addMilk(self):
+        print("with milk")
+
+class CoffeeFacade:
+    def __init__(self):
+        self.coffee = Coffee()
+        self.sugar = Sugar()
+        self.milk = Milk()
+
+    def CoffeeWithSugar(self):
+        self.coffee.makeCoffee()
+        self.sugar.addSugar()
+
+    def CoffeeWithMilk(self):
+        self.coffee.makeCoffee()
+        self.milk.addMilk()
+
+
+facade = CoffeeFacade()
+facade.CoffeeWithSugar()
+facade.CoffeeWithMilk()
+
